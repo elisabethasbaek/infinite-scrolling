@@ -1,0 +1,31 @@
+{
+  "name": "infinite-scrolling",
+  "version": "1.0.0",
+  "description": "Learning to do infinite scrolling, just ignore me",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elisabethasbaek/infinite-scrolling.git"
+  },
+  "author": "Elisabeth Asbæk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elisabethasbaek/infinite-scrolling/issues"
+  },
+  "homepage": "https://github.com/elisabethasbaek/infinite-scrolling#readme",
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-image-resize": "^0.13.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}
