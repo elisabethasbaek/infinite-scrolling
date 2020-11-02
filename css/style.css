@@ -1,0 +1,39 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+#wrapper{
+    max-width: 1280px;
+    margin: 0 auto;
+	font-family: 'Montserrat',sans-serif;
+	background: #FFF;
+}
+
+img{
+	width: 100%;
+	height: auto;
+	display: block; /* removes white space under img (change to inline if necessary) */
+}
+
+a{
+	text-decoration: none;
+	cursor: pointer;
+}
+
+	/* NAVBAR */
+nav ul{
+	display: flex;
+	justify-content: flex-start;
+}
+
+nav li{
+	list-style: none;
+}
+
+nav a{
+	text-decoration: none;
+}
+	/* NAVBAR END */
