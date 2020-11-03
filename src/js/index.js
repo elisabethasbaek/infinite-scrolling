@@ -1,6 +1,7 @@
 var offset = 0;
 var count;
 
+
 function catchEmAll(offset){
     fetch("https://pokeapi.co/api/v2/pokemon?limit=10&offset=" + offset)
         .then(function(response){
@@ -25,15 +26,19 @@ function catchEmAll(offset){
         })
 };
 
+
 var observer = new IntersectionObserver(function(entries){
     if(entries[0].intersectionRatio <= 0) return;
 
     observer.unobserve(entries[0].target);
     offset = offset + 10;
+
     if(offset > count) return;
+
     catchEmAll(offset);
     
 }, { threshold: 1 });
+
 
 catchEmAll(offset);
 
