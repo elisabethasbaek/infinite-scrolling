@@ -1,37 +1,59 @@
-let url = new URLSearchParams(window.location.search);
+var offset = 0;
+var count;
 
-let offset = 0;
+function catchEmAll(offset){
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=10&offset=" + offset)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data) {
+            //console.log(data);
 
-var options = {
-    threshold: [0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
+            let template = document.querySelector("#character"); //template-tag
+            let characterList = document.querySelector(".characterList"); //ul-tag
+            count = data.count;
+
+            data.results.forEach(function(result) {
+                let clone = template.content.cloneNode(true);
+
+                clone.querySelector(".character").innerText = result.name; //li-tag
+                characterList.appendChild(clone);
+            });
+
+            var lastChild = document.querySelector(".characterList li:last-child");
+            observer.observe(lastChild);
+        })
 };
 
-fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=10`)
-    .then(res => res.json())
-    .then(function(data) {
-        console.log(data);
+var observer = new IntersectionObserver(function(entries){
+    if(entries[0].intersectionRatio <= 0) return;
 
-        let character = document.querySelector("#character"); //template
-        let characterList = document.querySelector(".characterList"); //ul
+    observer.unobserve(entries[0].target);
+    offset = offset + 10;
+    if(offset > count) return;
+    catchEmAll(offset);
+    
+}, { threshold: 1 });
 
-        data.results.forEach(function(result) {
-            let clone = character.content.cloneNode(true);
-            clone.querySelector(".character").innerText = result.name;
+catchEmAll(offset);
 
-            characterList.appendChild(clone);
-        })
 
-        function callback(entries){
-            var {target, intersectionRatio, isIntersecting} = entries[0];
 
-            console.log(entries);
 
-            if(intersectionRatio >= 1){
-                target
-            }
-        };
 
-        var intersectionObserver = new IntersectionObserver(callback, options);
 
-        intersectionObserver.observe(document.querySelector(".characterList li:last-child"));
-    })
+
+
+
+/* function callback(entries){
+    //console.log(entries);
+    
+    let {target, intersectionRatio} = entries[0];
+    
+    if(intersectionRatio >= 1){
+        target
+    }
+}; */
+
+/* let observer = new IntersectionObserver(callback, options);
+observer.observe(document.querySelector(".characterList li:last-child")); */

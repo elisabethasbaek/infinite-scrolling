@@ -16,22 +16,18 @@ img{
 	display: block; /* removes white space under img (change to inline if necessary) */
 }
 
-a{
-	text-decoration: none;
-	cursor: pointer;
-	color: hotpink;
-}
-
 nav ul{
 	display: flex;
 	justify-content: flex-start;
 }
 
 li{
-	list-style: none;
-	font-size: 10vw;
-	font-weight: bold;
+	color: hotpink;
+	text-decoration: none;
 	text-transform: capitalize;
 	text-align: center;
-	padding: 0.5vw 0;
+	font-size: 8vw;
+	font-weight: bold;
+	line-height: 10vw;
+	list-style: none;
 }
