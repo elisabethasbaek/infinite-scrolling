@@ -6,10 +6,11 @@
 	<meta name="author" content="Elisabeth Asbaek Jeppesen"> <!-- author -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsive design -->
 
-	<link href="/src/style.css" rel="stylesheet" type="text/css"> <!-- connect to css file -->
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"> <!-- favicon -->
+	<link href="/css/style.css" rel="stylesheet"> <!-- connect to css file -->
 	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">  <!-- font awesome -->
 
-	<script src="/js/index.js" defer type="module"></script> <!-- javascript -->
+	<script src="/js/app.js" defer type="module"></script> <!-- javascript -->
 	
 	<title>Infinite scroll</title> <!-- title in tab -->
 </head>
@@ -17,9 +18,16 @@
 <body>
 	
 <main>
-		
-		
+	<ul class="characterList">
+
+	</ul>
 </main>
+
+<template id="character">
+    <li class="characterListItem">
+        <a href="" class="character"></a>
+    </li>
+</template>
 	
 </body>
 

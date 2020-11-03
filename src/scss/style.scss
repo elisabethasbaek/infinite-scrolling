@@ -1,15 +1,13 @@
-*{
+html,
+body{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
 }
 
-#wrapper{
-    max-width: 1280px;
-    margin: 0 auto;
-	font-family: 'Montserrat',sans-serif;
-	background: #FFF;
+main{
+	background-color: yellow;
 }
 
 img{
@@ -21,19 +19,19 @@ img{
 a{
 	text-decoration: none;
 	cursor: pointer;
+	color: hotpink;
 }
 
-	/* NAVBAR */
 nav ul{
 	display: flex;
 	justify-content: flex-start;
 }
 
-nav li{
+li{
 	list-style: none;
+	font-size: 10vw;
+	font-weight: bold;
+	text-transform: capitalize;
+	text-align: center;
+	padding: 0.5vw 0;
 }
-
-nav a{
-	text-decoration: none;
-}
-	/* NAVBAR END */

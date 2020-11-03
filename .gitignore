@@ -1,7 +1,9 @@
 # My own additions
-.DS_Store
-.vscode
 node_modules
+.env
+.vscode
+.DS_Store
+dist
 
 # Logs
 logs
